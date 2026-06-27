@@ -13,3 +13,5 @@
 
 # Eğer android klasörü komple istatistik bozuyorsa onu da görmezden gel diyebilirsin:
 android/ linguist-vendored=true
+linux/ linguist-vendored=true
+windows/ linguist-vendored=true
