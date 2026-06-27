@@ -1,0 +1,7 @@
+# CMake dosyalarını istatistik dışı bırak
+*.cmake linguist-generated=true
+*.cmake linguist-vendored=true
+*.cmake linguist-documentation=true
+
+# Eğer android klasörü komple istatistik bozuyorsa onu da görmezden gel diyebilirsin:
+android/ linguist-vendored=true
