@@ -3,5 +3,13 @@
 *.cmake linguist-vendored=true
 *.cmake linguist-documentation=true
 
+# Swift dosyalarını istatistik dışı bırak
+*.swift linguist-vendored=true
+*.swift linguist-generated=true
+
+# HTML dosyalarını istatistik dışı bırak
+*.html linguist-vendored=true
+*.html linguist-generated=true
+
 # Eğer android klasörü komple istatistik bozuyorsa onu da görmezden gel diyebilirsin:
 android/ linguist-vendored=true
