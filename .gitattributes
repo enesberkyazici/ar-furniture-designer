@@ -1,7 +1,7 @@
 # CMake dosyalarını istatistik dışı bırak
-*.cmake linguist-generated=true
-*.cmake linguist-vendored=true
-*.cmake linguist-documentation=true
+*.CMake linguist-generated=true
+*.CMake linguist-vendored=true
+*.CMake linguist-documentation=true
 
 # Swift dosyalarını istatistik dışı bırak
 *.swift linguist-vendored=true
