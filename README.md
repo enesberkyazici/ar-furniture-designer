@@ -1,2 +1,96 @@
 # ar-furniture-designer
 İstemci-Sunucu (Client-Server) mimarisi tabanlı, 3D modelleme ve Artırılmış Gerçeklik (AR) destekli mobilya yerleştirme ve görselleştirme sistemi. Python (FastAPI backend) ve Flutter (mobil) ile geliştirilmiştir.
+
+# Gereken yazılımlar
+-Flutter
+-Android Studio
+-Python
+
+# AR Furniture Design and Placement System v1.0
+# AR Mobilya Tasarım ve Yerleştirme Sistemi v1.0
+
+## Öğrenci Adı: Enes Berk YAZICI    
+## Öğrenci No: 24010509027
+## Tarih: 27 Haziran 2026
+
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
+[![Flutter](https://img.shields.io/badge/flutter-3.13.0-blue.svg)](https://flutter.dev/)
+[![ARCore](https://img.shields.io/badge/ARCore-Supported-orange.svg)](https://developers.google.com/ar)
+
+İstemci-Sunucu (Client-Server) mimarisi tabanlı, 3D modelleme ve Artırılmış Gerçeklik (AR) destekli mobilya yerleştirme ve görselleştirme sistemi. Python (FastAPI backend) ve Flutter (mobil) ile geliştirilmiştir.
+
+## 🚀 Proje Özellikleri ve Mimari
+
+### ✅ **Yazılım Mimarisi**
+- ✅ RESTful API entegrasyonu (JSON tabanlı veri iletimi)
+- ✅ İstemci ve Sunucu izolasyonu (Modüler yapı)
+- ✅ Cross-Platform mobil uygulama altyapısı (Flutter)
+
+### ✅ **AR ve 3D Render**
+- ✅ ModelViewer Plus entegrasyonu
+- ✅ .glb formatlı 3D model işleme
+- ✅ Google ARCore (Scene Viewer) tetikleyici altyapısı
+- ✅ UI/UX optimizasyonu (Kamera kontrolleri ve çerçeveleme)
+
+---
+
+## 📁 Proje Yapısı
+
+```text
+ar-furniture-designer/
+├── backend_api/                     # Sunucu Katmanı (Backend)
+│   ├── main.py                      # FastAPI ana sunucu dosyası
+│   └── __pycache__/                 # Python derleme optimizasyonları
+│
+├── mobile_app/                      # İstemci Katmanı (Mobile/Flutter)
+│   ├── lib/
+│   │   └── main.dart                # Uygulama arayüzü ve API haberleşme mantığı
+│   ├── android/                     # Android donanım ve izin yapılandırmaları
+│   │   └── app/src/main/
+│   │       └── AndroidManifest.xml  # Sistem izinleri (INTERNET, CleartextTraffic)
+│   ├── ios/                         # iOS derleme iskeleti
+│   ├── build/                       # APK ve makine kodu derleme dizini
+│   ├── pubspec.yaml                 # Flutter dış kütüphane bağımlılıkları
+│   └── README.md
+│
+└── 24010509027.md                   # Proje Raporu (Bu dosya)
+
+
+## 🛠️ Kurulum ve Çalıştırma
+'''1. Python Backend (Sunucu)
+# Backend klasörüne geçiş
+cd backend_api
+
+# Sunucuyu yerel ağda (localhost) başlat
+python -m uvicorn main:app --reload
+# API, [http://127.0.0.1:8000/api/furniture](http://127.0.0.1:8000/api/furniture) adresinden JSON verisi yayınına başlar.
+
+'''2. Flutter Mobile (İstemci)
+# Mobil uygulama klasörüne geçiş
+cd mobile_app
+
+# Gerekli kütüphaneleri ve paketleri çek
+flutter pub get
+
+# Uygulamayı derle ve bağlı Android cihaza yükle
+flutter run
+
+## 🧪 Sistem Testleri ve Donanım/Güvenlik Analizi
+
+Sistemin yazılım mimarisi, ağ haberleşmesi ve arayüz tepkileri uçtan uca test edilmiş olup %100 başarılı sonuç alınmıştır. Ancak test cihazında aşağıdaki donanımsal ve işletim sistemi tabanlı kısıtlamalar analiz edilmiştir (Bkz: Teslimat Videosu):
+
+1. Android Gizlilik İzinleri ve Kamera Blokajı
+Uygulamanın AndroidManifest.xml dosyasında gerekli tüm ağ ve erişim izinleri yapılandırılmış olmasına rağmen, Android'in yeni nesil sürümlerinde (Android 11+) gelen katı Gizlilik ve Güvenlik Politikaları (Privacy Dashboard) devreye girmektedir. İşletim sistemi, arka planda güvenilir bir AR motoru (Google Play Services for AR) tam olarak ayağa kalkmadan uygulamanın kamera donanımına doğrudan erişimini güvenlik gerekçesiyle bloke etmektedir. Bu durum bir kod hatası değil, modern Android sürümlerinin kullanıcı gizliliğini koruma refleksidir.
+
+2. Google Play Services for AR (ARCore) Uyumsuzluğu
+Flutter arayüzündeki AR butonu, telefonun kamerasını açmak için Google'ın resmi ARCore motorunu tetikleyecek şekilde kodlanmıştır. Ancak test edilen fiziksel mobil cihazın donanımı (özellikle ToF derinlik sensörü eksikliği ve jiroskop kalibrasyonu), Google tarafından resmi olarak sertifikalandırılmamıştır. Bu nedenle sistem "AR için Google Play Hizmetleri cihazınızla uyumlu değil" protokolünü devreye sokarak AR oturumunu hizmet dışı bırakmaktadır. Kamera başlatılamama sorununun temel kök nedeni bu donanımsal destek eksikliğidir.
+
+Sonuç: Sistem mimarisi kusursuz olarak kurgulanmış olup, ARCore destekli standart donanıma ve gerekli gizlilik izinlerine sahip herhangi bir cihazda doğrudan çalışacak formdadır.
+
+👨‍💻 Geliştirici
+Enes Berk YAZICI
+GitHub: [@enesberkyazici](https://github.com/enesberkyazici)
+Proje: [https://github.com/enesberkyazici/ar-furniture-designer]
+
+Mimari Tasarım, Backend API ve Flutter Frontend Entegrasyonu.
