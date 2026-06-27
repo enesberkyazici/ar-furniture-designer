@@ -1,5 +1,5 @@
 android/ linguist-vendored=true
 # CMake dosyalarını istatistik dışı bırak
-*.cmake linguist-generated=true
-*.cmake linguist-vendored=true
-*.cmake linguist-documentation=true
+cmake linguist-generated=true
+cmake linguist-vendored=true
+cmake linguist-documentation=true
